@@ -1,25 +1,25 @@
-# BankGuardian
+# Digital Banking Core
 
-An enterprise-grade Digital Banking Fraud Detection and Risk Monitoring Platform built using Java Spring Boot, PostgreSQL, FastAPI, Next.js, and Docker.
+An enterprise-grade Digital Banking Fraud Detection and Risk Monitoring Platform built using **Java, Spring Boot, PostgreSQL, FastAPI, Next.js, Kafka, and Docker**.
 
-The platform processes banking transactions in real time, performs rule-based and machine learning fraud detection, and provides investigation workflows, analytics dashboards, notifications, and secure user management.
+This platform simulates how modern financial institutions process banking transactions, perform hybrid fraud detection, manage fraud investigations, and monitor customer risk in real time.
 
 ---
 
 ## Features
 
-- Secure JWT Authentication
+- JWT Authentication & Authorization
 - Role-Based Access Control (RBAC)
-- Banking Transaction APIs
-- Real-Time Fraud Detection
-- Rule-Based Risk Engine
+- Banking Transaction Management
+- Rule-Based Fraud Detection
 - Machine Learning Risk Scoring
-- Fraud Investigation Workflow
 - Customer Risk Monitoring
+- Fraud Investigation Workflow
 - Audit Logging
-- Notification System
+- Real-Time Notifications
 - Analytics Dashboard
 - Dockerized Deployment
+- RESTful APIs
 
 ---
 
@@ -56,89 +56,77 @@ The platform processes banking transactions in real time, performs rule-based an
 
 ## Architecture
 
-```
-Frontend (Next.js)
-        │
-        ▼
-Spring Boot REST APIs
-        │
- ┌──────┼────────┐
- │      │        │
- ▼      ▼        ▼
-PostgreSQL   Kafka   FastAPI ML Service
+```text
+                    Next.js Frontend
+                           │
+                           ▼
+                Spring Boot REST API
+                           │
+      ┌────────────────────┼────────────────────┐
+      ▼                    ▼                    ▼
+ PostgreSQL           Kafka / Redpanda     FastAPI ML Service
 ```
 
 ---
 
 ## Project Structure
 
-```
-BankGuardian
+```text
+Digital-Banking-Core
 │
-├── src
-├── frontend
-├── ml-service
-├── .mvn
-│
+├── src/
+├── frontend/
+├── ml-service/
+├── .mvn/
 ├── Dockerfile
 ├── docker-compose.yml
 ├── pom.xml
 ├── README.md
-└── mvnw
+├── mvnw
+└── mvnw.cmd
 ```
 
 ---
 
 ## Getting Started
 
-Clone the repository
+### Clone Repository
 
 ```bash
-git clone https://github.com/ronakparmar11/BankGuardian.git
+git clone https://github.com/ronakparmar11/Digital-Banking-Core.git
 ```
 
-Start the application
+### Run using Docker
 
 ```bash
 docker compose up --build
 ```
 
-Backend
+### Services
 
-```
-http://localhost:8080
-```
-
-Frontend
-
-```
-http://localhost:3000
-```
-
-ML Service
-
-```
-http://localhost:8000
-```
+| Service | URL |
+|----------|-----|
+| Backend API | http://localhost:8080 |
+| Frontend | http://localhost:3000 |
+| ML Service | http://localhost:8000 |
 
 ---
 
-## Future Improvements
+## Future Enhancements
 
 - Multi-Factor Authentication
 - Redis Caching
+- Kubernetes Deployment
 - Prometheus Monitoring
 - Grafana Dashboards
-- Kubernetes Deployment
+- Distributed Tracing
 
 ---
 
 ## Author
 
-Ronak Parmar
+**Ronak Parmar**
 
-LinkedIn:
-https://www.linkedin.com/in/ronak-parmar-75b9422ba/
+LinkedIn: https://www.linkedin.com/in/ronak-parmar-75b9422ba/
 
-GitHub:
-https://github.com/ronakparmar11
+GitHub: https://github.com/ronakparmar11
